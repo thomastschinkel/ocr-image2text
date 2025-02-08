@@ -80,12 +80,5 @@ This is the text from the image.
 
 This project is licensed with the MIT License, see the [LICENSE](LICENSE) file for more details.
 
-## Troubleshooting
-
-- **"Error opening image"**: Check if you entered the file-name right.
-- **"OCR error"**: Check if your API Key is correct.
-- **"No text recognized"**: The image should be clear, so the OCR can recognize the Text.
-
-## Contributing
 
 If you have contributions or improvements, please fork the Git or submit a pull request.
