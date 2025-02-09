@@ -1,6 +1,6 @@
 # OCR-Image2Text
 
-ocr-image2text is a Python script to extract text from images using the OCR technology. It supports many languages.
+ocr-image2text is a Python script to extract text from images using the OCR technology. It uses the OCR.space API and It supports many languages.
 
 ## Features
 
