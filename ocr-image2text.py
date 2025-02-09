@@ -12,7 +12,7 @@ def ocr_space_api(image_path, language='eng', api_key="INSERT API KEY", overlay=
     try:
         with open(image_path, 'rb') as image_file:
             files = {image_path: image_file}
-            response = requests.post(api_url, data=payload, files=files)
+            response = requests.post(api_url, data=payload, files=files, timeout=60)
     except Exception as e:
         return f"Error opening image: {e}"
 
