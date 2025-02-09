@@ -1,10 +1,10 @@
 # OCR-Image2Text
 
-ocr-image2text is a Python script that extracts text from images using OCR technology. It uses the OCR.space API and supports many languages.
+ocr-image2text is a python script recognizing text in images using OCR / OCR.space API. It supports multiple languages.
 
 ## Features
 
-* **language support:** Recognize text in many different languages. List below ↓
+* **language support:** Recognize text in many different languages. See the List below ↓
 * **Simple CLI tool:** Extract text from images within the command line.
 * **Overlay support:** Optionally overlays the OCR result on the image.
 * **Error handling:** Clear error messages if the process would fail.
@@ -54,7 +54,7 @@ pip install -r requirements.txt
 
 ### API Key
 
-To use the OCR API, you have to get an API key from the website [OCR.space API](https://ocr.space/ocrapi/freekey). Follow the instructions to get the free API key. When you have it, set it in the Code
+To use the OCR-API visit the [OCR.space API](https://ocr.space/ocrapi/freekey) Website. Login and get a free API-Key.
 
 ## Usage
 
