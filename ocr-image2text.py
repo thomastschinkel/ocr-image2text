@@ -1,14 +1,13 @@
 import requests
 
-def ocr_space_api(image_path, language='eng', api_key="INSERT API KEY", overlay=False):
+def ocr_space_api(image_path, language='eng', api_key="K84147669788957", overlay=False):
     """ You can get a Free API Key on https://ocr.space/ocrapi/freekey """
     api_url = 'https://api.ocr.space/parse/image'
-    
     payload = {
         'isOverlayRequired': overlay,
         'apikey': api_key,
         'language': language,
-        'scale': True
+        'scale': True  # Optional, falls gewünscht
     }
     try:
         with open(image_path, 'rb') as image_file:
@@ -48,10 +47,12 @@ def main():
 
     save_in_file = input("Want to save the extracted text in a file? Y/N: ").strip().lower()
     if save_in_file == "y":
-        # Stelle sicher, dass der Ordner "output" existiert!
+
+        import os
+        os.makedirs("output", exist_ok=True)
         with open("output/text.txt", "w") as file:
             file.write(extracted_text)
-            print("Extracted text was saved in text.txt")
+            print("Extracted text was saved in output/text.txt")
 
 if __name__ == '__main__':
     main()
