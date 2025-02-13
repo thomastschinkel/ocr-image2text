@@ -1,4 +1,5 @@
 import requests
+import os
 
 def ocr_space_api(image_path, language='eng', api_key="K84147669788957", overlay=False):
     """ You can get a Free API Key on https://ocr.space/ocrapi/freekey """
@@ -48,7 +49,6 @@ def main():
     save_in_file = input("Want to save the extracted text in a file? Y/N: ").strip().lower()
     if save_in_file == "y":
 
-        import os
         os.makedirs("output", exist_ok=True)
         with open("output/text.txt", "w") as file:
             file.write(extracted_text)
