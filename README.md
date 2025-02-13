@@ -61,7 +61,7 @@ To use the OCR-API visit the [OCR.space API](https://ocr.space/ocrapi/freekey) W
 The script will ask for the:
 
 1. **Image path:** Full path to the image you want to extract the text, or just the image file, if the image is in the project folder. 
-2. **Language code:** The language code for OCR AI. For example, 'eng' for English, 'ger' for German, etc. If no one is provided, the default is english.
+2. **Language code:** The language code for OCR API. For example, 'eng' for English, 'ger' for German, etc. If no one is provided, the default is english.
 
 ## License
 
