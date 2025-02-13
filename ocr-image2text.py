@@ -2,16 +2,17 @@ import requests
 
 def ocr_space_api(image_path, language='eng', api_key="INSERT API KEY", overlay=False):
     """ You can get a Free API Key on https://ocr.space/ocrapi/freekey """
-
     api_url = 'https://api.ocr.space/parse/image'
+    
     payload = {
         'isOverlayRequired': overlay,
         'apikey': api_key,
-        'language': language
+        'language': language,
+        'scale': True
     }
     try:
         with open(image_path, 'rb') as image_file:
-            files = {image_path: image_file}
+            files = {'file': image_file}
             response = requests.post(api_url, data=payload, files=files, timeout=60)
     except Exception as e:
         return f"Error opening image: {e}"
@@ -36,14 +37,9 @@ def main():
     print("This tool extracts text from an image using the OCR.space API.")
 
     image_path = input("Enter the full path to the image: ").strip()
-    language_input = input(
-        "Enter the language code (example: 'eng', 'ger', 'spa', 'fra': "
-    ).strip().lower()
+    language_input = input("Enter the language code (example: 'eng', 'ger', 'spa', 'fra'): ").strip().lower()
 
-    if not language_input:
-        language_code = 'eng'
-    else:
-        language_code = language_input
+    language_code = language_input if language_input else 'eng'
 
     print("\nProcessing image...\n")
     extracted_text = ocr_space_api(image_path, language=language_code)
@@ -52,7 +48,8 @@ def main():
 
     save_in_file = input("Want to save the extracted text in a file? Y/N: ").strip().lower()
     if save_in_file == "y":
-        with open("output/text.txt","w") as file:
+        # Stelle sicher, dass der Ordner "output" existiert!
+        with open("output/text.txt", "w") as file:
             file.write(extracted_text)
             print("Extracted text was saved in text.txt")
 
